@@ -7,7 +7,7 @@ body, html {
   color: white;
 }
 .background{
-  background-image: url(./bluu.png);
+  background-image: url(bluu.png);
   background-position:center;
   background-size: cover;
 }
