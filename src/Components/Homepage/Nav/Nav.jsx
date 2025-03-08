@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import logo from "./finallogo.svg";
 import "./Nav.css";
 
@@ -11,7 +12,9 @@ const Nav = () => {
 
   return (
     <nav className="top-nav">
-      <img src={logo} alt="Flashy Finish Logo" className="logo" />
+      <Link to="/" onClick={() => setIsOpen(false)}>
+        <img src={logo} alt="Flashy Finish Logo" className="logo" />
+      </Link>
 
       {/* Mobile Menu Button (Thinner X) */}
       <button className="menu-toggle" onClick={toggleMenu}>
@@ -20,16 +23,16 @@ const Nav = () => {
 
       {/* Navigation Links */}
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-        <li><a href="/" onClick={() => setIsOpen(false)}>Home</a></li>
-        <li><a href="/services" onClick={() => setIsOpen(false)}>Services</a></li>
-        <li><a href="/" onClick={() => setIsOpen(false)}>Careers</a></li>
-        <li><a href="/" onClick={() => setIsOpen(false)}>Contact</a></li>
+        <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+        <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+        <li><Link to="/careers" onClick={() => setIsOpen(false)}>Careers</Link></li>
+        <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
       </ul>
 
       {/* Hide "Let’s Talk" on mobile */}
-      <button className="cta-button hide-on-mobile">Let’s Talk</button>
+      <Link to="/contact" className="cta-button hide-on-mobile">Let’s Talk</Link>
     </nav>
   );
-}
+};
 
 export default Nav;
