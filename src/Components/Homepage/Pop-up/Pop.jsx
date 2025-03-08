@@ -4,6 +4,7 @@ import logo from "./Hiring.svg";
 import "./Pop.css";
 
 const Pop = ({ onClose }) => {
+  const [submitted, setSubmitted] = useState(false);
   const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
@@ -21,8 +22,7 @@ const Pop = ({ onClose }) => {
     const data = await response.json();
 
     if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
+      setSubmitted(true);
     } else {
       console.log("Error", data);
       setResult(data.message);
@@ -37,39 +37,49 @@ const Pop = ({ onClose }) => {
           <img src={pop} alt="close" className="close-btn" onClick={onClose} />
         </div>
         <div className="bottom-pop">
-          <h2 className="Head-pop">Are you passionate about cars?</h2>
-          <form onSubmit={onSubmit} className="details-container">
-            <div className="sub-details">
-              <h6>Join Our Team – Car Detailing Jobs Available!</h6>
-              <p>Details will be sent via mail</p>
+          {submitted ? (
+            <div className="thank-you-message">
+              <h2>Thanks for your interest!</h2>
+              <p>We will contact you soon.</p>
+             
             </div>
-            <div className="mail">
-              <label htmlFor="email">Mail</label>
-              <input
-                type="email"
-                name="email"
-                className="Input-mail"
-                placeholder="Enter your mail here"
-                required
-              />
-            </div>
-            <div className="phone-container">
-              <label htmlFor="phone">Phone Number</label>
-              <input
-                type="tel"
-                name="phone"
-                className="Input-contact"
-                placeholder="Enter your contact number"
-                required
-              />
-            </div>
-            <div className="send-button">
-              <button type="submit" className="Send-btn">
-                Send
-              </button>
-            </div>
-            <span className="form-result">{result}</span>
-          </form>
+          ) : (
+            <>
+              <h2 className="Head-pop">Are you passionate about cars?</h2>
+              <form onSubmit={onSubmit} className="details-container">
+                <div className="sub-details">
+                  <h6>Join Our Team – Car Detailing Jobs Available!</h6>
+                  <p>Details will be sent via mail</p>
+                </div>
+                <div className="mail">
+                  <label htmlFor="email">Mail</label>
+                  <input
+                    type="email"
+                    name="email"
+                    className="Input-mail"
+                    placeholder="Enter your mail here"
+                    required
+                  />
+                </div>
+                <div className="phone-container">
+                  <label htmlFor="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    className="Input-contact"
+                    placeholder="Enter your contact number"
+                    required
+                  />
+                </div>
+                <div className="send-button">
+                  <button type="submit" className="Send-btn">
+                    Send
+                  </button>
+                </div>
+                <span className="form-result">{result}</span>
+              </form>
+            </>
+          )}
         </div>
       </div>
     </div>
