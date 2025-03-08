@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import rotate1 from "./pic1.svg";
 import rotate2 from "./pic2.svg";
-import rotate3 from "./pic3.svg";
+import rotate3 from "./pic3.png";
 import rotate4 from "./pic4.svg";
 import glass from "./glass.png"
 import "./Service.css";
