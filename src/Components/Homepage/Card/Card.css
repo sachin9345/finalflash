@@ -1,0 +1,233 @@
+.card-whole {
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.27);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    max-width: 887px;
+    flex-shrink: 0;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.photo-card {
+    width: 100%;
+    max-width: 346px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.para-card {
+    color: #FFF;
+    font-family: "Geist";
+    font-size: clamp(8px, 2vw, 24px);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+    width: 100%;
+    max-width: 506px;
+    flex-shrink: 0;
+}
+
+.words-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.title-card {
+    width: 100%;
+    max-width: 542px;
+    color: rgba(255, 255, 255, 0.80);
+    text-shadow: 0px -9px 80px rgba(0, 0, 0, 0.26), 
+                 0px -4.504px 40.039px rgba(0, 0, 0, 0.20), 
+                 0px -2.713px 24.118px rgba(0, 0, 0, 0.17), 
+                 0px -1.739px 15.456px rgba(0, 0, 0, 0.15), 
+                 0px -1.127px 10.017px rgba(0, 0, 0, 0.13), 
+                 0px -0.709px 6.306px rgba(0, 0, 0, 0.11), 
+                 0px -0.408px 3.623px rgba(0, 0, 0, 0.09), 
+                 0px -0.179px 1.595px rgba(0, 0, 0, 0.06);
+    font-family: Geist;
+    font-size: clamp(14px, 2vw, 48px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Large Desktops (1440px and up) */
+@media screen and (min-width: 1440px) {
+    .card-whole {
+        padding: 30px;
+        gap: 30px;
+        max-width: 1000px;
+    }
+    
+    .photo-card {
+        max-width: 400px;
+    }
+}
+
+/* Desktop (1025px - 1439px) */
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+    .card-whole {
+        padding: 24px;
+        gap: 24px;
+    }
+    
+    .photo-card {
+        max-width: 346px; /* Original size */
+    }
+}
+
+/* Small Desktop / Large Tablet (901px - 1024px) */
+@media screen and (min-width: 901px) and (max-width: 1024px) {
+    .card-whole {
+        padding: 18px;
+        gap: 18px;
+    }
+    
+    .photo-card {
+        max-width: 320px; /* Slightly smaller */
+    }
+}
+
+/* Tablet (601px - 900px) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .card-whole {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .photo-card {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    .photo-card img {
+        max-height: 300px;
+        object-fit: contain;
+    }
+
+    .words-card {
+        align-items: center;
+        max-width: 90%;
+    }
+    
+    .para-card {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .title-card {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+/* Large Mobile (481px - 600px) */
+@media screen and (min-width: 481px) and (max-width: 600px) {
+    .card-whole {
+        padding: 14px;
+        gap: 14px;
+        border-radius: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo-card {
+        max-width: 90%;
+    }
+    
+    .photo-card img {
+        max-height: 250px;
+        object-fit: contain;
+    }
+    
+    .words-card {
+        align-items: center;
+        max-width: 95%;
+    }
+    
+    .para-card {
+        max-width: 100%;
+        font-size: clamp(8px, 3vw, 18px);
+        text-align: center;
+    }
+    
+    .title-card {
+        font-size: clamp(14px, 4vw, 32px);
+        text-align: center;
+    }
+}
+
+/* Mobile (320px - 480px) */
+@media screen and (max-width: 480px) {
+    .card-whole {
+        padding: 12px;
+        gap: 12px;
+        border-radius: 16px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .photo-card {
+        max-width: 100%;
+    }
+    
+    .photo-card img {
+        max-height: 200px;
+        object-fit: contain;
+    }
+    
+    .words-card {
+        gap: 6px;
+        align-items: center;
+    }
+    
+    .para-card {
+        font-size: 14px;
+        text-align: center;
+        font-weight: 300;
+    }
+    
+    .title-card {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+/* Small Mobile (320px and below) */
+@media screen and (max-width: 320px) {
+    .card-whole {
+        padding: 10px;
+        gap: 10px;
+        border-radius: 14px;
+    }
+    
+    .photo-card img {
+        max-height: 160px;
+    }
+    
+    .para-card {
+        font-size: clamp(8px, 4vw, 14px);
+    }
+    
+    .title-card {
+        font-size: clamp(14px, 6vw, 24px);
+    }
+}

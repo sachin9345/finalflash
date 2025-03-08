@@ -1,0 +1,185 @@
+/* Ensures styles only apply to this component */
+.odour-removal-container {
+  padding: 40px 20px;
+  border-radius: 12px;
+  margin: 40px 60px;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.odour-removal-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Title */
+.odour-removal-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Content Container */
+.odour-removal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 30px;
+}
+
+/* Image Styling */
+.odour-removal-image {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.odour-removal-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Text Content */
+.odour-removal-text {
+  text-align: left;
+  padding: 10px;
+  max-width: 600px;
+}
+
+.odour-removal-text h3 {
+  font-size: 42px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 18px;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.odour-removal-text p {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 5px;
+  line-height: 1.6;
+}
+
+/* Feature Box */
+.odour-removal-features {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(1px);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+/* Features List */
+.odour-removal-features ul {
+  list-style-type: none;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.odour-removal-features ul li {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  padding-left: 25px;
+  position: relative;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Custom Bullet Points */
+.odour-removal-features ul li::before {
+  content: ".";
+  color: #a5c8fd;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .odour-removal-content {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .odour-removal-text {
+    flex: 1;
+  }
+
+  .odour-removal-image {
+    flex: 1;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .odour-removal-container {
+    margin: 30px 30px;
+    padding: 30px;
+  }
+
+  .odour-removal-title {
+    font-size: 36px;
+  }
+
+  .odour-removal-text h3 {
+    font-size: 32px;
+  }
+
+  .odour-removal-text p {
+    font-size: 18px;
+  }
+
+  .odour-removal-features ul li {
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .odour-removal-container {
+    margin: 20px 15px;
+    padding: 20px;
+  }
+
+  .odour-removal-title {
+    font-size: 28px;
+  }
+
+  .odour-removal-text h3 {
+    font-size: 26px;
+  }
+
+  .odour-removal-text p {
+    font-size: 16px;
+  }
+
+  .odour-removal-image {
+    max-width: 250px;
+  }
+
+  .odour-removal-features ul li {
+    font-size: 14px;
+  }
+}

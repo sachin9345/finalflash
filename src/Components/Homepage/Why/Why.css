@@ -1,0 +1,157 @@
+.whole-why {
+    padding: 30px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.27);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    display: flex;
+    gap: 30px;
+}
+.image-why{
+    width: 100%;
+    height: 100%;
+    max-width: 770px;
+}
+.image-why img {
+    border-radius: 30px;
+    max-width: 770px;
+
+}
+
+.head-why {
+    color: rgba(255, 255, 255, 0.90);
+    text-align: center;
+    text-shadow: 0px -9px 80px rgba(0, 0, 0, 0.26), 0px -4.504px 40.039px rgba(0, 0, 0, 0.20), 0px -2.713px 24.118px rgba(0, 0, 0, 0.17), 0px -1.739px 15.456px rgba(0, 0, 0, 0.15), 0px -1.127px 10.017px rgba(0, 0, 0, 0.13), 0px -0.709px 6.306px rgba(0, 0, 0, 0.11), 0px -0.408px 3.623px rgba(0, 0, 0, 0.09), 0px -0.179px 1.595px rgba(0, 0, 0, 0.06);
+    font-family: "Geist";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 62px;
+}
+
+.para-why {
+    height: 384px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: "Geist";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 184%;
+}
+
+.right-why {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Responsive styles for large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1200px) {
+    .para-why {
+        height: auto;
+        max-height: 384px;
+        overflow-y: auto;
+    }
+}
+
+/* Responsive styles for medium devices (tablets, 768px and up) */
+@media only screen and (max-width: 992px) {
+    .whole-why {
+        padding: 25px;
+        gap: 25px;
+    }
+    
+    .head-why {
+        font-size: 38px;
+        line-height: 48px;
+    }
+    
+    .para-why {
+        font-size: 22px;
+        line-height: 170%;
+    }
+    
+    .right-why {
+        gap: 30px;
+    }
+    .image-why img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Responsive styles for small devices (landscape phones, 576px and up) */
+@media only screen and (max-width: 768px) {
+    .whole-why {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .head-why {
+        font-size: 34px;
+        line-height: 42px;
+    }
+    
+    .para-why {
+        font-size: 20px;
+        line-height: 160%;
+        height: auto;
+        max-height: none;
+    }
+    
+    .right-why {
+        gap: 20px;
+    }
+}
+
+/* Responsive styles for extra small devices (phones, 575px and down) */
+@media only screen and (max-width: 575px) {
+    .whole-why {
+        padding: 15px;
+        border-radius: 20px;
+    }
+    
+        .image-why img {
+            border-radius: 20px;
+        }
+    
+    .head-why {
+        font-size: 30px;
+        line-height: 36px;
+    }
+    
+    .para-why {
+        font-size: 18px;
+        line-height: 150%;
+    }
+    
+    .right-why {
+        gap: 15px;
+    }
+}
+
+/* Responsive styles for very small devices (small phones, 400px and down) */
+@media only screen and (max-width: 400px) {
+    .whole-why {
+        padding: 12px;
+        border-radius: 15px;
+    }
+    
+    .image-why img {
+        border-radius: 15px;
+    }
+    
+    .head-why {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    
+    .para-why {
+        font-size: 14px;
+        line-height: 140%;
+        font-weight: 300;
+    }
+}

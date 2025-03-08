@@ -1,0 +1,256 @@
+.whole-service {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: black;
+
+  }
+  h2{
+    margin: 0%;
+    
+  }
+  .heading-service {
+      text-align: center;
+  font-size: 42px;
+  margin-top: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+  }
+  
+  p{
+    margin: 0%;
+  }
+  .para-service {
+    color: #f0f0f0;
+    text-align: center;
+    font-family: Geist;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 150.032%;
+    margin-bottom: 2rem;
+    padding: 0 85px;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 5px;
+    line-height: 1.6;
+  }
+  
+  .photo-rotate {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+  }
+  
+  .rotate-card {
+    flex: 1;
+    height: 500px;
+    perspective: 1000px;
+  }
+  
+  .rotate-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .rotate-card:hover .rotate-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .rotate-card-front,
+  .rotate-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+
+    overflow: hidden;
+  }
+  
+  .rotate-card-front {
+    background-color: black;
+  }
+  
+  .rotate-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .rotate-card-back {
+    background-color: #222;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .rotate-card-back h3 {
+    font-family: "Geist", sans-serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .rotate-card-back p {
+    font-family: "Geist", sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.5;
+  }
+  
+  .image-text {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 32px;
+    font-weight:normal;
+    font-family: "Geist", sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    width: 100%;
+  }
+  .image-text-back{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 28px;
+    font-weight: normal;
+    font-family: "Geist", sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    width: 100%;
+  }
+  
+  /* Responsive adjustments */
+  /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .photo-rotate {
+      flex-wrap: wrap;
+      gap: 15px; /* Add spacing between cards */
+      justify-content: center;
+  }
+
+  .rotate-card {
+      flex: 1 1 calc(50% - 15px);
+      margin-bottom: 20px;
+      height: 400px; /* Adjust height for better visibility */
+  }
+
+  .rotate-card-back h3 {
+      font-size: 24px;
+  }
+
+  .rotate-card-back p {
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-service {
+      font-size: 38px; /* Slightly smaller for better fit */
+      margin-top: 25px;
+  }
+
+  .para-service {
+      font-size: 20px;
+      padding: 0 50px;
+  }
+
+  .rotate-card {
+      flex: 1 1 calc(50% - 10px);
+      height: 320px; /* Reduce height */
+  }
+
+  .rotate-card-back h3 {
+      font-size: 22px;
+  }
+
+  .rotate-card-back p {
+      font-size: 15px;
+  }
+
+  .image-text,
+  .image-text-back {
+      font-size: 24px;
+      bottom: 30px; /* Adjust positioning */
+  }
+}
+
+@media (max-width: 640px) {
+  .heading-service {
+      font-size: 32px;
+  }
+
+  .para-service {
+      font-size: 18px;
+      padding: 0 30px;
+  }
+
+  .rotate-card {
+      flex: 1 1 100%; /* Make each card full-width */
+      height: 280px;
+  }
+
+  .rotate-card-inner {
+      transition: transform 0.6s ease-in-out; /* Smooth flipping */
+  }
+
+  .rotate-card-back h3 {
+      font-size: 20px;
+  }
+
+  .rotate-card-back p {
+      font-size: 14px;
+  }
+
+  .image-text,
+  .image-text-back {
+      font-size: 20px;
+      bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-service {
+      font-size: 28px;
+  }
+
+  .para-service {
+      font-size: 16px;
+      padding: 0 20px;
+  }
+
+  .rotate-card {
+      height: 250px; /* Further reduce height */
+  }
+
+  .rotate-card-back h3 {
+      font-size: 18px;
+  }
+
+  .rotate-card-back p {
+      font-size: 13px;
+  }
+
+  .image-text,
+  .image-text-back {
+      font-size: 18px;
+      bottom: 15px;
+  }
+}
+
+  

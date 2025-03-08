@@ -1,0 +1,191 @@
+.top-nav {
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.14);
+    background:rgba(61, 61, 61, 0.05);
+    box-shadow: 0px 18px 22px -6px rgba(0, 0, 0, 0.158);
+    backdrop-filter: blur(110.4px);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;  /* Ensures full width */
+    max-width: 1300px;
+    margin: 20px auto; /* Centers it */
+    position: relative;
+    z-index: 1001;
+    box-sizing: border-box; /* Prevents overflow issues */
+}
+
+/* Logo */
+.logo {
+    height: 50px;
+    padding-left: 20px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0;
+    padding-right: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Underline effect */
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #1e90ff;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #4a9ff3;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Call-to-action button */
+.cta-button {
+    background: #1e90ff;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background 0.3s;
+    margin-right: 20px;
+}
+
+.cta-button:hover {
+    background: #0d6efd;
+}
+
+/* 🟢 Responsive Navbar for Tablets & Mobile */
+.menu-toggle {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #fff;
+    background: none;
+    border: none;
+    z-index: 1002;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    transition: transform 0.3s ease-in-out;
+    outline: none;  /* Remove blue outline */
+}
+
+/* Make the X thinner */
+.thin-x {
+    font-size: 28px; 
+    font-weight: 300; /* Lighter weight to reduce thickness */
+}
+
+/* Remove blue highlight when clicking */
+.menu-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+/* Responsive Adjustments */
+@media screen and (max-width: 991px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        height: 40vh;
+        background: rgba(0, 0, 0, 0.76);
+        box-shadow: 0px 18px 22px -6px rgba(0, 0, 0, 0.158);
+        backdrop-filter: blur(110.4px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        padding: 40px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.4s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links li a {
+        font-size: 22px;
+    }
+
+    /* Hide "Let’s Talk" button on mobile */
+    .cta-button {
+        display: none;
+    }
+}
+
+/* Small Mobile (320px - 575px) */
+@media screen and (max-width: 575px) {
+    .top-nav {
+        padding: 12px 20px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .nav-links {
+        gap: 25px;
+    }
+
+    .nav-links li a {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        font-size: 28px;
+    }
+}

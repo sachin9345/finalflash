@@ -1,0 +1,175 @@
+.carwax-process {
+  background: black;
+  color: white;
+  padding: 50px 10px 30px 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+/* Gradient Background */
+.gradient-top-right {
+  position: absolute;
+  top: -110px;
+  right: 0;
+  width: 390px;
+  height: auto;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.gradient-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  height: auto;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Heading */
+.carwax-title {
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  transform-origin: top;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Timeline */
+.carwax-timeline {
+  position: relative;
+  width: 85%;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Vertical Line */
+.carwax-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: white;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  z-index: 1;
+}
+
+/* Step Wrapper */
+.carwax-item-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+/* Alternating Left & Right */
+.carwax-item-wrapper.right {
+  flex-direction: row;
+  text-align: left;
+}
+
+.carwax-item-wrapper.left {
+  flex-direction: row-reverse;
+  text-align: left;
+}
+
+/* Dot Indicator */
+.carwax-circle {
+  width: 10px;
+  height: 10px;
+  background: #007bff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: background 0.3s ease, scale 0.3s ease;
+}
+
+/* Outer Circle */
+.carwax-circle::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Step Content */
+.carwax-item {
+  width: 40%;
+}
+
+.carwax-content {
+  padding: 6px 12px;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.carwax-content h3 {
+  color: #FFF;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  line-height: 1;
+}
+
+.carwax-content p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .carwax-title {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .carwax-line {
+    width: 2px;
+    left: 50%;
+  }
+
+  .carwax-item {
+    width: 45%;
+  }
+
+  .carwax-content h3 {
+    font-size: 18px;
+  }
+
+  .carwax-content p {
+    font-size: 12px;
+  }
+
+  .carwax-circle {
+    width: 8px;
+    height: 8px;
+  }
+
+  .carwax-circle::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .gradient-top-right,
+  .gradient-bottom-left {
+    width: 250px;
+  }
+}
