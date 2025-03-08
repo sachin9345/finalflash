@@ -24,7 +24,7 @@ const Final = () => {
         </div>
       </div>
       <div className="car-full">
-        <Why/>` `
+        <Why/>
       </div>
       </div>
     </div>
