@@ -25,8 +25,8 @@ const Nav = () => {
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
         <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
         <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
-        <li><Link to="/" onClick={() => setIsOpen(false)}>Careers</Link></li>
-        <li><Link to="/" onClick={() => setIsOpen(false)}>Contact</Link></li>
+        <li><Link to="/careers" onClick={() => setIsOpen(false)}>Careers</Link></li>
+        <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
       </ul>
 
       {/* Hide "Let’s Talk" on mobile */}

@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Footer } from "./Components/Footer/Footer";
 import Final from "./Components/Homepage/Full-top/Final";
 import FinalService from "./Components/Ourservices/FinalService";
-import Nav from "./Components/Homepage/Nav/Nav";
+import FinalCareer from "./Components/Careers/FinalCareer";
+import FinalContact from "./Components/Careers/FinalContact";
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
    <Routes>
     <Route path="/" element={<Final/>}/>
     <Route path="/services" element={<FinalService/>}/>
+    <Route path="/careers" element={<FinalCareer/>}/>
+    <Route path="/contact" element={<FinalContact/>}/>
 
    </Routes>
       
