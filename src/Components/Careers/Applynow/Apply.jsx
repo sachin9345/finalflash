@@ -66,7 +66,7 @@ const Apply = ({ onClose }) => {
                     type="email"
                     name="email"
                     className="Input-mail"
-                    placeholder="mail@example.com"
+                    placeholder="Enter Your Mail Here"
                     required
                   />
                 </div>
@@ -76,7 +76,7 @@ const Apply = ({ onClose }) => {
                     type="tel"
                     name="phone"
                     className="Input-contact"
-                    placeholder="1111111111"
+                    placeholder="Enter Your Number Here"
                     required
                   />
                 </div>
