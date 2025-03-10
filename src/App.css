@@ -32,7 +32,7 @@ body, html {
 
 @media (max-width: 480px) {
   .carwaxhead{
-    font-size: 22px;
+    font-size: 26px;
     margin-top: 10px;
     font-weight: 600;
     height: 50px;
