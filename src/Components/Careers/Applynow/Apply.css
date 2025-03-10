@@ -1,0 +1,504 @@
+.popup-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding-top: 50px;
+  }
+  .Send-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.Send-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.form-result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form-result.success {
+  color: #4CAF50;
+}
+
+.form-result.error {
+  color: #f44336;
+}
+
+  
+  .whole-popup {
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    padding: 32px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(28px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .close-btn {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .top-pop {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .popup-overlay .whole-popup {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .Head-pops{
+    color: #FFF;
+    text-align: center;
+    font-family: "Geist";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 60px */
+  }
+  
+  .mail, .phone-container ,.job-type-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sub-detailss h6 {
+    color: #FFF;
+    text-align: center;
+    font-family: Geist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150.032%;
+    margin: 0;
+  }
+  .Input-jobtype {
+    padding: 16px 36px;
+    font-size: 16px;
+    border: 2px solid #E7E7E7;
+    border-radius: 8px;
+    background: rgba(13, 130, 215, 0.10);
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none; /* Hides default dropdown arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+/* Custom dropdown arrow */
+.job-type-container {
+    position: relative;
+}
+
+.job-type-container::after {
+    content: '▼'; 
+    position: absolute;
+    top: 65%;
+    right: 16px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevents the arrow from blocking clicks */
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Dropdown Focus */
+.Input-jobtype:focus {
+    outline: none;
+    border-color: #0D82D7;
+    box-shadow: 0 0 8px rgba(13, 130, 215, 0.5);
+}
+.Input-contact:focus{
+    outline: none;
+    border-color: #0D82D7;
+    box-shadow: 0 0 8px rgba(13, 130, 215, 0.5);
+}
+
+.Input-mail:focus{
+    outline: none;
+    border-color: #0D82D7;
+    box-shadow: 0 0 8px rgba(13, 130, 215, 0.5);
+}
+
+/* Dropdown Options */
+.Input-jobtype option {
+    background: #0D82D7;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+}
+  .sub-detailss p {
+    color: rgba(255, 255, 255, 0.80);
+    text-align: center;
+    font-family: Geist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150.032%;
+    margin: 0;
+  }
+  
+  .Input-mail, .Input-contact {
+    padding: 16px 36px;
+    font-size: 16px;
+    border: 2px solid #E7E7E7;
+    border-radius: 8px;
+    background: rgba(13, 130, 215, 0.10);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .Send-btn {
+    border-radius: 8px;
+    border: 2px solid #E7E7E7;
+    background: rgba(13, 130, 215, 0.80);
+    display: flex;
+    padding: 22px 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+    width: 100%;
+    font-size: 28px;
+  }
+  
+  .form-result {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  .details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  ::placeholder {
+    font-size: 16px;
+    color: #bbb;
+    opacity: 1;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .Input-mail::placeholder, .Input-contact::placeholder {
+    font-size: 16px;
+    color: #aaa;
+    font-style: italic;
+    letter-spacing: 0.5px;
+  }
+  
+  .Input-mail:focus::placeholder, .Input-contact:focus::placeholder {
+    color: #777;
+  }
+  
+  .Input-mail:not(:placeholder-shown)::placeholder, .Input-contact:not(:placeholder-shown)::placeholder {
+    color: #555;
+  }
+  
+  .logose {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+  }
+  
+  label {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Geist";
+    color: #ffffff;
+    margin-bottom: 5px;
+    align-self: start;
+  }
+  
+  /* Media Queries */
+  
+  /* Large tablets and small desktops */
+  @media screen and (max-width: 1024px) {
+    .whole-popup {
+      max-width: 450px;
+      padding: 28px;
+    }
+    
+    .Head-pop {
+      font-size: 28px;
+    }
+    
+    .logose {
+      width: 260px;
+      top: -70px;
+    }
+  }
+  
+  /* Medium tablets */
+  @media screen and (max-width: 768px) {
+    .whole-popup {
+      max-width: 400px;
+      padding: 24px;
+    }
+    
+    .Head-pops {
+      font-size: 26px;
+    }
+    
+    .sub-details h6 {
+      font-size: 22px;
+    }
+    
+    .sub-details p {
+      font-size: 18px;
+    }
+    
+    .Send-btn {
+      padding: 18px 32px;
+      font-size: 24px;
+    }
+    
+    .logose {
+      width: 240px;
+      top: -65px;
+    }
+  }
+  
+  /* Small tablets and large phones */
+  @media screen and (max-width: 600px) {
+    .popup-overlay {
+      padding-top: 30px;
+    }
+    
+    .whole-popup {
+      max-width: 350px;
+      padding: 20px;
+      gap: 10px;
+    }
+    
+    .Head-pops {
+      font-size: 20px;
+    }
+    
+    .sub-details h6 {
+      font-size: 20px;
+    }
+    
+    .sub-details p {
+      font-size: 16px;
+    }
+    
+    .Input-mail, .Input-contact {
+      padding: 14px 28px;
+    }
+    
+    .Send-btn {
+      padding: 16px 28px;
+      font-size: 22px;
+    }
+    
+    .details-container {
+      gap: 20px;
+    }
+    
+    .logose {
+      width: 220px;
+      top: -60px;
+    }
+    
+    label {
+      font-size: 16px;
+    }
+  }
+  
+  /* Mobile phones */
+  @media screen and (max-width: 480px) {
+    .popup-overlay {
+      
+      justify-content: center;
+      align-items: center;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 55%;
+  
+    }
+    
+    .whole-popup {
+      max-width: 300px;
+      padding: 16px;
+      border-radius: 24px;
+    }
+    
+    .Head-pops {
+      font-size: 20px;
+    }
+    
+    .sub-details h6 {
+      font-size: 18px;
+    }
+    
+    .sub-details p {
+      font-size: 14px;
+    }
+    
+    .Input-mail, .Input-contact {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+    
+    .Input-mail::placeholder, .Input-contact::placeholder {
+      font-size: 14px;
+    }
+    
+    .Send-btn {
+      padding: 14px 24px;
+      font-size: 20px;
+      gap: 16px;
+    }
+    
+    .details-container {
+      gap: 16px;
+    }
+    
+    .logose {
+      width: 180px;
+      top: -50px;
+    }
+    
+    label {
+      font-size: 14px;
+    }
+    
+    .close-btn {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .form-result {
+      font-size: 16px;
+    }
+  }
+  
+  /* Very small mobile phones */
+  @media screen and (max-width: 320px) {
+    .whole-popup {
+      max-width: 280px;
+      padding: 14px;
+      border-radius: 20px;
+    }
+    .popup-overlay {
+      padding-top: 80px;
+      
+    }
+    
+    .Head-pops {
+      font-size: 20px;
+    }
+    
+    .sub-details h6 {
+      font-size: 16px;
+    }
+    
+    .sub-details p {
+      font-size: 13px;
+    }
+    
+    .Input-mail, .Input-contact {
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+    
+    .Input-mail::placeholder, .Input-contact::placeholder {
+      font-size: 13px;
+    }
+    
+    .Send-btn {
+      padding: 12px 20px;
+      font-size: 18px;
+      gap: 12px;
+    }
+    
+    .logose {
+      width: 160px;
+      top: -45px;
+    }
+  }
+  
+  /* For height-constrained views */
+  @media screen and (max-height: 700px) {
+    .popup-overlay {
+      align-items: flex-start;
+      padding-top: 60px;
+    }
+    
+    .logose {
+      top: -50px;
+      width: 200px;
+    }
+  }
+  
+  /* For very small height screens */
+  @media screen and (max-height: 00px) {
+    .popup-overlay {
+      padding-top: 40px;
+      overflow-y: auto;
+    }
+    
+    .whole-popup {
+      margin-bottom: 20px;
+    }
+    
+    .logose {
+      position: relative;
+      top: -40px;
+      margin-bottom: -30px;
+    }
+  }

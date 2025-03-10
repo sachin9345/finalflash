@@ -1,6 +1,6 @@
 import React from 'react'
-import JobPosting from './Career'
 import Nav from '../Homepage/Nav/Nav'
+import CarDetailingJobs from './Carrear/Carrear'
 
 const FinalCareer = () => {
   return (
@@ -8,7 +8,7 @@ const FinalCareer = () => {
     <div className="navadjust">
       <Nav/> 
       </div>
-      <JobPosting/>
+      <CarDetailingJobs/>
     </div>
   )
 }

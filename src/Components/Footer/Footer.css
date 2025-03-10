@@ -206,6 +206,8 @@
   .footer-background-text {
     font-size: 70px;
     bottom: -90px;
+    display: none;
+
   }
 
   .footer-container {
