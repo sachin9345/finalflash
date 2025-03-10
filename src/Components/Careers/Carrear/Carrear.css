@@ -1,11 +1,12 @@
 .car-detailing-jobs {
-    width: 100vw; /* Full width */
+    width: 100%; /* Changed from 100vw to prevent horizontal scrollbar */
     margin: 0;
     padding: 40px 20px;
     background: #121212; /* Dark background */
     font-family: Arial, sans-serif;
     color: #ffffff; /* White text */
     text-align: center;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
 }
 
 .car-detailing-jobs h2 {
@@ -18,6 +19,9 @@
     color: #e0e0e0;
     line-height: 1.6;
     font-size: 16px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Job container for side-by-side layout */
@@ -29,6 +33,7 @@
     margin: 20px auto;
     padding: 20px;
     gap: 30px;
+    flex-wrap: wrap; /* Allow wrapping for very small screens */
 }
 
 /* Left-side Job Details */
@@ -39,6 +44,7 @@
     flex: 1;
     text-align: left;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    min-width: 280px; /* Minimum width for readability */
 }
 
 /* Right-side Benefits */
@@ -51,6 +57,7 @@
     margin-top: 80px;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    min-width: 280px; /* Minimum width for readability */
 }
 
 .benefits ul, .job-details ul {
@@ -84,21 +91,71 @@
     background: #217dbb;
 }
 
-/* Responsive Design */
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+    .job-container {
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    .car-detailing-jobs h2 {
+        font-size: 24px;
+    }
+}
+
 @media (max-width: 768px) {
     .job-container {
-        flex-direction: column;
         align-items: center;
         gap: 20px;
     }
 
     .job-details, .benefits {
-        text-align: center;
+        text-align: left;
         padding: 15px;
-        width: 90%;
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .benefits {
+        margin-top: 20px; /* Reduce top margin on mobile */
     }
 
     .apply-button {
         width: 80%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-detailing-jobs {
+        padding: 30px 10px;
+    }
+    
+    .car-detailing-jobs h2 {
+        font-size: 22px;
+    }
+    
+    .car-detailing-jobs p {
+        font-size: 14px;
+    }
+    
+    .benefits li, .job-details li {
+        font-size: 14px;
+        padding: 6px 0;
+    }
+    
+    .apply-button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .job-details, .benefits {
+        padding: 10px;
+    }
+    
+    .car-detailing-jobs h2 {
+        font-size: 20px;
     }
 }
