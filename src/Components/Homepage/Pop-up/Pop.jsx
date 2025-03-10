@@ -32,7 +32,7 @@ const Pop = ({ onClose }) => {
   return (
     <div className="popup-overlay">
       <div className="whole-popup">
-        <img src={logo} className="logos" alt="logo" />
+        <img src={logo} className="hiringlogo" alt="logo" />
         <div className="top-pop">
           <img src={pop} alt="close" className="close-btn" onClick={onClose} />
         </div>

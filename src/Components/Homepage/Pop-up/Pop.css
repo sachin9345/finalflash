@@ -12,7 +12,10 @@
   backdrop-filter: blur(10px);
   transition: opacity 0.3s ease-in-out;
 }
-
+.hiringlogo{
+  width: 110px;
+  height: auto;
+}
 /* Popup Container */
 .whole-popup {
   position: relative;

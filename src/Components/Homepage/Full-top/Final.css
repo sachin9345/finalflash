@@ -32,7 +32,10 @@
         padding-left: 30px;
         padding-right: 30px;
     }
-    
+    .wall-full {
+        background-size: contain; /* Ensures the full image is visible */
+        background-position: top center;
+    }
     .wrapper-final {
         width: 100%;
         box-sizing: border-box;
@@ -49,7 +52,10 @@
         padding-left: 20px;
         padding-right: 20px;
     }
-    
+    .wall-full {
+        background-size: contain; /* Ensures the full image is visible */
+        background-position: top center;
+    }
     .car-full {
         margin-top: 20px;
         width: 100%;
