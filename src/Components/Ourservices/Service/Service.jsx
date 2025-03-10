@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import rotate1 from "./pic1.svg";
 import rotate2 from "./pic2.svg";
 import rotate3 from "./pic4.svg";
-import rotate4 from "./pic4.jpg";
+import rotate4 from "./intt.jpg";
 import glass from "./glass.png"
 import "./Service.css";
 
