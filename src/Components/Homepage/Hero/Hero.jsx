@@ -8,10 +8,7 @@ const Hero = () => {
       <div className="whole-inside">
         <div className="top-hero">
           <div className="head-hero">
-            <h1>Flashy Finish</h1>
-          </div>
-          <div className="ltd">
-            <h3>Ltd</h3>
+            <h1>FLASHY FINISH<span className="ltd"> Ltd</span></h1>
           </div>
         </div>
         

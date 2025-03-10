@@ -27,7 +27,7 @@ h3 {
     font-size: 7px; /* Reduced from 80px */
     font-style: normal;
     font-weight: 700;
-    text-transform: uppercase;
+    
     opacity: 0.75;
     background: linear-gradient(175deg, #FFF 42.25%, #1499F9 74.13%);
     background-clip: text;
@@ -204,18 +204,20 @@ h3 {
     }
     
     .head-hero, .char-flip, .flip-word {
-        font-size: 44px;
-        letter-spacing: 1.5px;
+        font-size: 28px;
+        letter-spacing: 1px;
     }
     
     .middle-hero {
-        font-size: 28px;
+        font-size: 22px;
     }
     
     .bottom-hero {
-        font-size: 18px;
+        font-size: 15px;
     }
-    
+    .middle-heros {
+        font-size: 20px;
+    }
     .ltd {
         font-size: 26px;
         padding-bottom: 18px;
@@ -253,7 +255,7 @@ h3 {
     
     .bottom-hero p {
         font-size: 14px;
-        width: 300px;
+      
         font-weight: 300;
     }
     
