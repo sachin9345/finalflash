@@ -6,8 +6,17 @@ body, html {
   background-color: #000000;
   color: white;
 }
+@media (max-width: 480px) {
+  .navadjust{
+    padding: 0 10px;
+  }
+}
 
-
+@media (max-width: 768px) {
+  .navadjust{
+    padding: 0 10px;
+  }
+}
 .carwaxhead{
   height: 100px;
   text-align: center;

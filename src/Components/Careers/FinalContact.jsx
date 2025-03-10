@@ -5,7 +5,9 @@ import ContactUs from '../Contact/Contact'
 const FinalContact = () => {
   return (
     <div>
-        <Nav/>
+        <div className="navadjust">
+      <Nav/> 
+      </div>
         <ContactUs/>
       
     </div>

@@ -5,7 +5,9 @@ import Nav from '../Homepage/Nav/Nav'
 const FinalCareer = () => {
   return (
     <div>
-    <Nav/>
+    <div className="navadjust">
+      <Nav/> 
+      </div>
       <JobPosting/>
     </div>
   )

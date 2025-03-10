@@ -10,12 +10,11 @@ import Nav from '../Homepage/Nav/Nav';
 const FinalService = () => {
   return (
     <div>
-      <div className="fullser">
-      <Nav/>
-     
-     <Service/>
+      <div className="navadjust">
+      <Nav/> 
       </div>
-     
+      
+      <Service/>
          <div className="carwaxhead">CAR WAXING SERVICES</div>
         <CarWaxing/>
        <CarWaxingProcess/>
