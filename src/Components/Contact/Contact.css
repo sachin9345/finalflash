@@ -103,6 +103,8 @@
 .message-box {
     height: 120px;
     resize: none;
+    font-family:Geist;
+    
 }
 
 /* Select dropdown styles */
