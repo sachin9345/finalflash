@@ -119,6 +119,8 @@
 /* Custom dropdown arrow */
 .input-field.full-width {
     position: relative;
+        color: #cccccc;
+
 }
 
 .input-field.full-width::after {
