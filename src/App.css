@@ -17,6 +17,9 @@ body, html {
     padding: 0 10px;
   }
 }
+.navadjust{
+  margin:0 30px;
+}
 .carwaxhead{
   height: 100px;
   text-align: center;
