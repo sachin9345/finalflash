@@ -117,7 +117,7 @@ const Apply = ({ onClose }) => {
                 {/* Submit Button */}
                 <div className="send-button">
                   <button type="submit" className="Send-btn" disabled={isLoading}>
-                    {isLoading ? "Submiting" : "Submit`"}
+                    {isLoading ? "Submiting" : "Submit"}
                   </button>
                 </div>
                 {/* Form Result Message */}
