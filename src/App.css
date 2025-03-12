@@ -8,14 +8,17 @@ body, html {
 }
 @media (max-width: 480px) {
   .navadjust{
-    padding: 0 10px;
+    margin:0 5px;
   }
 }
 
 @media (max-width: 768px) {
   .navadjust{
-    padding: 0 10px;
+    margin:0 5px;
   }
+}
+.navadjust{
+  margin:0 30px;
 }
 .carwaxhead{
   height: 100px;

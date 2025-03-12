@@ -103,6 +103,8 @@
 .message-box {
     height: 120px;
     resize: none;
+    font-family:Geist;
+    
 }
 
 /* Select dropdown styles */
@@ -117,6 +119,8 @@
 /* Custom dropdown arrow */
 .input-field.full-width {
     position: relative;
+        color: #cccccc;
+
 }
 
 .input-field.full-width::after {

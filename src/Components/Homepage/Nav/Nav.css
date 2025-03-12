@@ -9,7 +9,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;  /* Ensures full width */
-    max-width: 1300px;
     margin: 20px auto; /* Centers it */
     position: relative;
     z-index: 1001;
