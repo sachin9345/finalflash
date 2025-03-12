@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import bmw from "./bmw.svg";
 import "./Why.css";
-import Pop from "../Pop-up/Pop";
+import Pop from "../../Careers/Applynow/Apply";
 
 const Why = () => {
   const imageRef = useRef(null);

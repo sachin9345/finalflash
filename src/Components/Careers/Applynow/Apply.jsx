@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { supabase } from "../../../spabaseClient";
 import pop from "./Cross.svg";
 import logo from "./Hiring.svg";
 import "./Apply.css";
@@ -7,33 +8,60 @@ const Apply = ({ onClose }) => {
   const [result, setResult] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [resumeName, setResumeName] = useState(""); // Store selected file name
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending...");
+    setResult("Uploading resume...");
     setIsLoading(true);
     setIsSuccess(false);
 
-    const formData = new FormData(event.target);
-    formData.append("access_key", "6e8335c3-3323-4c60-9db8-435785a9d649");
+    const file = event.target.resume.files[0];
+
+    if (!file) {
+      setResult("Please upload a resume.");
+      setIsLoading(false);
+      return;
+    }
 
     try {
+      // Upload file to Supabase Storage
+      const filePath = `uploads/${Date.now()}_${file.name}`;
+      const { data, error } = await supabase.storage.from("resumes").upload(filePath, file);
+
+      if (error) throw error;
+
+      // Get public file URL
+      const { data: urlData } = supabase.storage.from("resumes").getPublicUrl(filePath);
+      const fileURL = urlData.publicUrl;
+
+      if (!fileURL) throw new Error("Failed to get file URL.");
+
+      // Create form data object
+      const formData = new FormData();
+      formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+      formData.append("email", event.target.email.value);
+      formData.append("phone", event.target.phone.value);
+      formData.append("resume", fileURL);
+
+      // Send form data to Web3Forms
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
       });
 
-      const data = await response.json();
+      const responseData = await response.json();
 
-      if (data.success) {
-        setResult("");
+      if (responseData.success) {
+        setResult("Your application has been submitted successfully!");
         setIsSuccess(true);
+        setResumeName(""); // Clear resume name
         event.target.reset();
       } else {
-        setResult(data.message);
+        setResult(responseData.message || "Submission failed. Please try again.");
       }
     } catch (error) {
-      setResult("An error occurred. Please try again.");
+      setResult("An error occurred. Please check your internet connection.");
     } finally {
       setIsLoading(false);
     }
@@ -60,42 +88,40 @@ const Apply = ({ onClose }) => {
                   <h6>Join Our Team – Car Detailing Jobs Available!</h6>
                   <p>Details will be sent via mail</p>
                 </div>
+                {/* Email Input */}
                 <div className="mail">
-                  <label htmlFor="email">Mail</label>
-                  <input
-                    type="email"
-                    name="email"
-                    className="Input-mail"
-                    placeholder="Enter Your Mail Here"
-                    required
-                  />
+                  <label htmlFor="email">E-Mail</label>
+                  <input type="email" name="email" className="Input-mail" placeholder="Enter Your Mail Here" required />
                 </div>
+                {/* Phone Input */}
                 <div className="phone-container">
                   <label htmlFor="phone">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    className="Input-contact"
-                    placeholder="Enter Your Number Here"
-                    required
-                  />
+                  <input type="tel" name="phone" className="Input-contact" placeholder="Enter Your Number Here" required />
                 </div>
-                <div className="job-type-container">
-                  <label htmlFor="jobType">Job Type</label>
-                  <select name="jobType" className="Input-jobtype" required>
-                    <option value="">Select</option>
-                    <option value="Full Time">Full Time</option>
-                    <option value="Part Time">Part Time</option>
-                  </select>
+                {/* Resume Upload Field */}
+                <div className="resume-container">
+                  <label htmlFor="resume">Upload Resume</label>
+                  <label className="upload-label">
+                    <input
+                      type="file"
+                      name="resume"
+                      className="Input-resume"
+                      accept=".pdf,.doc,.docx"
+                      required
+                      onChange={(e) => setResumeName(e.target.files[0]?.name || "")}
+                    />
+                    Choose File
+                  </label>
+                  {resumeName && <p className="file-name">{resumeName}</p>}
                 </div>
+                {/* Submit Button */}
                 <div className="send-button">
                   <button type="submit" className="Send-btn" disabled={isLoading}>
-                    {isLoading ? "Sending..." : "Send"}
+                    {isLoading ? "Submiting" : "Submit`"}
                   </button>
                 </div>
-                <span className={`form-result ${isSuccess ? "success" : "error"}`}>
-                  {result}
-                </span>
+                {/* Form Result Message */}
+                <span className={`form-result ${isSuccess ? "success" : "error"}`}>{result}</span>
               </form>
             </>
           )}
